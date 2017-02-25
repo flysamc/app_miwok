@@ -1,5 +1,7 @@
 package com.example.android.miwok;
 
+import android.util.Log;
+
 import static android.view.View.VISIBLE;
 
 /**
@@ -12,18 +14,22 @@ public class Word {
     private String mDefaultTranslation;
     private int mImageResourceId;
     private boolean check = false;
+    private int mMusicResourceId;
 
 
-    public Word(String miwokTranslation, String defaultTranslation, int imageResourceId) {
+    public Word(String miwokTranslation, String defaultTranslation, int imageResourceId, int musicResourceId) {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
         mImageResourceId = imageResourceId;
+        mMusicResourceId = musicResourceId;
         check = true;
     }
 
-    public Word(String miwokTranslation, String defaultTranslation) {
+
+    public Word(String miwokTranslation, String defaultTranslation, int musicResourceId) {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
+        mMusicResourceId = musicResourceId;
         check = false;
     }
 
@@ -45,5 +51,9 @@ public class Word {
 
     public boolean hadImage() {
         return check;
+    }
+
+    public int getMusicResourceId(){
+        return mMusicResourceId;
     }
 }
